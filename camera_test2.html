@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Camera Web App</title>
+  </head>
+  <body>
+    <div id="header">
+      <h3>Simple Web Camera</h3>
+      <input type="file" accept="image/*;capture=camera" />
+      <img id="frame" />
+      <script>
+        var camera = document.getElementById("camera");
+        var frame = document.getElementById("frame");
+
+        camera.addEventListener("change", function (e) {
+          var file = e.target.files[0];
+          frame.src = URL.createObjectURL(file);
+        });
+      </script>
+    </div>
+  </body>
+</html>
